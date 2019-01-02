@@ -1,0 +1,20 @@
+.navbar_color{
+  background-color: #007BFF;
+}
+.logo{
+  float: left;
+  padding: 15px 80px;
+  /* background-color: #fff; */
+}
+.box{
+  background-color: blue;
+  height: 100px;
+  width: 200px;
+}
+
+.nav_sub2>li{
+  padding-left: 30px;
+}
+.nav_sub3>li{
+    padding-left: 45px;
+  }
