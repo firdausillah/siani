@@ -2,7 +2,8 @@
     include '../koneksi.php';
 
     $nis = $_GET['nis'];
-    $query = mysqli_query($con, "DELETE FROM siswa WHERE nis=$nis");
+    // procedure
+    $query = mysqli_query($con, "call delete_data_siswa ('$nis')");
         if (mysqli_query($con, $query)) {
             echo "Record deleted successfully";
         } else {

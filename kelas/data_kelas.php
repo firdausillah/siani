@@ -89,8 +89,8 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 											</script>
 											<?php
 
-
-												$query = "SELECT * FROM kelas INNER JOIN jurusan ON kelas.id_jurusan=jurusan.id_jurusan";
+												// procedure
+												$query = "call data_kelas";
 												$result = mysqli_query($con, $query);
 												$jml_user = mysqli_num_rows($result);
 												$no = 1;

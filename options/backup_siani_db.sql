@@ -36,7 +36,7 @@ CREATE TABLE `hasil_nilai` (
   CONSTRAINT `hasil_nilai_ibfk_2` FOREIGN KEY (`nis`) REFERENCES `siswa` (`nis`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `hasil_nilai_ibfk_3` FOREIGN KEY (`id_thn_akad`) REFERENCES `thn_akad` (`id_thn_akad`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `hasil_nilai_ibfk_5` FOREIGN KEY (`kd_mapel`) REFERENCES `mapel` (`kd_mapel`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 
@@ -68,14 +68,9 @@ CREATE TABLE `kelas` (
   CONSTRAINT `kelas_ibfk_1` FOREIGN KEY (`id_jurusan`) REFERENCES `jurusan` (`id_jurusan`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO kelas VALUES("X1","X","1","1");
-INSERT INTO kelas VALUES("X2","X","2","1");
+INSERT INTO kelas VALUES("XA1","X","1","1");
 INSERT INTO kelas VALUES("XA3","X","3","2");
-INSERT INTO kelas VALUES("XA4","X","4","1");
-INSERT INTO kelas VALUES("XA44","XII","4","3");
-INSERT INTO kelas VALUES("XI1","XI","1","3");
-INSERT INTO kelas VALUES("XI2","XI","2","2");
-INSERT INTO kelas VALUES("XIA3","XI","3","1");
+INSERT INTO kelas VALUES("XAG3","X","3","3");
 
 
 
@@ -90,7 +85,6 @@ CREATE TABLE `mapel` (
 INSERT INTO mapel VALUES("MP1","MATEMATIKA");
 INSERT INTO mapel VALUES("MP2","BAHASA INDONESIA");
 INSERT INTO mapel VALUES("MP3","Biologi");
-INSERT INTO mapel VALUES("MP4","bahasa inggris");
 
 
 
@@ -128,9 +122,8 @@ CREATE TABLE `siswa` (
   CONSTRAINT `siswa_ibfk_2` FOREIGN KEY (`kd_kelas`) REFERENCES `kelas` (`kd_kelas`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO siswa VALUES("111111","edwin","ramdani","2009-12-31","sumbersari, jember","0987658745678","sungkono","098654678909","XI2");
-INSERT INTO siswa VALUES("222222","fellia","nurohmah","2000-02-23","tulungagung","08888899999","sumarno","098654678909","XI2");
-INSERT INTO siswa VALUES("333333","m","firdausillah","1998-02-22","banyuwangi","0987654345678","sumarni","098654678909","XI2");
+INSERT INTO siswa VALUES("111111","edwin","ramdani","2017-12-31","sumbersari","0987654345678","sumarni","098654678909","XA1");
+INSERT INTO siswa VALUES("222222","fellia","nurohmah","2016-07-29","tulungagung","0987654345678","sumanto","098654678909","XA3");
 
 
 
@@ -160,14 +153,19 @@ CREATE TABLE `users` (
   `level` enum('Admin','Guru','Siswa') NOT NULL,
   `status` enum('Aktif','Nonaktif') NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 INSERT INTO users VALUES("19","admin","admin","Admin","Aktif");
 INSERT INTO users VALUES("29","111111","111111","Siswa","Aktif");
-INSERT INTO users VALUES("30","222222","222222","Siswa","Aktif");
-INSERT INTO users VALUES("31","333333","333333","Siswa","Aktif");
 INSERT INTO users VALUES("32","444444","444444","Guru","Aktif");
 INSERT INTO users VALUES("33","555555","555555","Guru","Aktif");
+INSERT INTO users VALUES("35","2","2","Admin","Aktif");
+INSERT INTO users VALUES("36","2","2","Admin","Aktif");
+INSERT INTO users VALUES("37","222222","222222","Siswa","Aktif");
+INSERT INTO users VALUES("38","111111","111111","Siswa","Aktif");
+INSERT INTO users VALUES("39","222222","222222","Siswa","Aktif");
+INSERT INTO users VALUES("40","111111","111111","Siswa","Aktif");
+INSERT INTO users VALUES("41","222222","222222","Siswa","Aktif");
 
 
 

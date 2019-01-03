@@ -90,7 +90,8 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 												else{
 													$and = "";
 												}
-												$query = "SELECT siswa.nis, first_name, last_name, tgl_lahir, alamat, no_hp, wali_murid, hp_wali, kelas, jurusan, golongan FROM siswa LEFT JOIN kelas ON siswa.kd_kelas=kelas.kd_kelas LEFT JOIN jurusan ON kelas.id_jurusan=jurusan.id_jurusan";
+												// procedure
+												$query = "call data_siswa";
 												$result = mysqli_query($con, $query);
 												$no = 1;
 
