@@ -76,7 +76,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		 		<div class="container-fluid">
 					<div class="panel">
 						<div class="panel-heading">
-							<h1 class="panel-title"><i class="lnr lnr-user"></i>&ensp;Tambah Data Jurusan</h1>
+							<h1 class="panel-title"><i class="fa fa-building-o"></i>&ensp; Tambah Data Jurusan</h1>
 						</div>
 					</div>
 		 			<div class="row">
@@ -86,15 +86,15 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		 							<form method="POST" action="">
 		 								<div class="row">
 		 									<div class="col-md-6">
-												<label for="">Id Jurusan</label>
-		 										<input type="text" name="id_jurusan" class="form-control" placeholder="Id jurusan" value="<?php echo(isset($_POST['id_jurusan']) ? $_POST['id_jurusan'] : $id_jurusan ) ?>">
+												<label for="">ID</label>
+		 										<input type="text" name="id_jurusan" class="form-control" placeholder="ID Jurusan" value="<?php echo(isset($_POST['id_jurusan']) ? $_POST['id_jurusan'] : $id_jurusan ) ?>">
 		 										<span class="text-danger"> <?php echo($id_jurusan_err); ?></span>
 		 									</div>
 		 								</div>
 		 								<br>
 		 								<div class="row">
 											<div class="col-md-6">
-												<label for="">jurusan</label>
+												<label for="">Jurusan</label>
 												<input type="text" name="jurusan" class="form-control" placeholder="Jurusan" value="<?php echo(isset($_POST['jurusan']) ? $_POST['jurusan'] : $jurusan ) ?>">
 												<span class="text-danger"> <?php echo($jurusan_err); ?></span>
 		 									</div>
@@ -102,8 +102,8 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		 								<br>	
 		 								<div class="row">
 		 									<div class="col-md-6">
-		 										<button type="submit" class="btn btn-primary"><i class="fa fa-plus-square"></i>Tambah</button> &nbsp; &nbsp;
-		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i> &nbsp;  Batal</button>
+		 										<button type="submit" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp; Tambah</button>
+		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i> &nbsp; Batal</button>
 		 									</div>
 		 								</div>
 		 							</form>

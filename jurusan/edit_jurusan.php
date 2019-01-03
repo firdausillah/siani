@@ -79,7 +79,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
  			 <div class="container-fluid">
  				 <div class="panel">
  					 <div class="panel-heading">
- 						 <h1 class="panel-title"><i class="fa fa-user"></i>&ensp;Edit Jurusan</h1>
+ 						 <h1 class="panel-title"><i class="fa fa-building-o"></i>&ensp; Edit Jurusan</h1>
  					 </div>
  				 </div>
  				 <div class="row">
@@ -91,7 +91,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 										<input type="hidden" name="id_guru" value="<?php echo $val['id_guru']?>">
 										<div class="row">
 											<div class="col-md-6">
-												<label for="">Id Jurusan</label>
+												<label for="">ID</label>
 												<input type="text" name="id_jurusan" class="form-control" placeholder="ID Jurusan" value="<?php echo($val['id_jurusan']) ?>">
 		 										<span class="text-danger"> <?php echo($id_jurusan_err); ?></span>
 											</div>
@@ -100,15 +100,15 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 										<div class="row">
 										 <div class="col-md-6">
 											 <label for="">Jurusan</label>
-											 <input type="text" name="jurusan" class="form-control" placeholder="jurusan" value="<?php echo($val['jurusan']) ?>">
+											 <input type="text" name="jurusan" class="form-control" placeholder="Jurusan" value="<?php echo($val['jurusan']) ?>">
 											 <span class="text-danger"> <?php echo($jurusan_err); ?></span>
 										 </div>
 										</div>
 										<br>
 										<div class="row">
 		 									<div class="col-md-6">
-		 										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>  Simpan</button> &nbsp; &nbsp;
-		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i> &nbsp;  Batal</button>
+		 										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp; Simpan</button>
+		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i>&nbsp; Batal</button>
 		 									</div>
 		 								</div>
 									</form>

@@ -95,7 +95,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
  			 <div class="container-fluid">
  				 <div class="panel">
  					 <div class="panel-heading">
- 						 <h1 class="panel-title"><i class="fa fa-user"></i>&ensp;Edit Guru</h1>
+ 						 <h1 class="panel-title"><i class="lnr lnr-user"></i>&ensp; Edit Guru</h1>
  					 </div>
  				 </div>
  				 <div class="row">
@@ -123,8 +123,8 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 										<br>
 										 <div class="row">
 											<div class="col-md-6">
-												<label for="">No HP</label>
-												<input type="text" name="no_hp" minlength="11" maxlength="13" class="form-control" placeholder="No Handphone" value="<?php echo($val['no_hp']) ?>">
+												<label for="">No. Hp</label>
+												<input type="text" name="no_hp" minlength="11" maxlength="13" class="form-control" placeholder="No. Hp" value="<?php echo($val['no_hp']) ?>">
 		 										<span class="text-danger"> <?php echo($no_hp_err); ?></span>
 											</div>
 										</div>
@@ -139,8 +139,8 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 										<br>
 										<div class="row">
 		 									<div class="col-md-6">
-		 										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>  Simpan</button> &nbsp; &nbsp;
-		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i> &nbsp;  Batal</button>
+		 										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp; Simpan</button>
+		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i>&nbsp; Batal</button>
 		 									</div>
 		 								</div>
 									</form>

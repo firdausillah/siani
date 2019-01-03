@@ -47,7 +47,7 @@ if ($_SESSION['level'] == 'Admin') {
 				<div class="container-fluid">
 					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title"><i class="lnr lnr-user"></i>&ensp;Data User</h3>
+							<h3 class="panel-title"><i class="lnr lnr-users"></i>&ensp; Data User</h3>
 							<div class="col-md-2 col-md-offset-10">
 
 							</div>
@@ -77,8 +77,8 @@ if ($_SESSION['level'] == 'Admin') {
 									<table class="table table-striped table-hover table-bordered">
 										<thead>
 											<tr>
-												<th>No</th>
-												<th>Id</th>
+												<th>No.</th>
+												<th>ID</th>
 												<th>User Name</th>
 												<th>Password</th>
 												<th>Level</th>
@@ -88,9 +88,7 @@ if ($_SESSION['level'] == 'Admin') {
 										<tbody>
 											<script type="text/javascript">
 												function konfirm() {
-													tanya = confirm("Anda yakin ?");
-													if (tanya == true) return true;
-													else return false;
+													return confirm("Anda yakin ingin menghapus data ?");
 												}
 											</script>
 											<?php
@@ -116,7 +114,7 @@ if ($_SESSION['level'] == 'Admin') {
 															<td>$val[level]</td>
 															<td>
 																<a href='edit_user.php?id_user=$val[id_user]' class='btn btn-primary btn-xs' title='Edit'><i class='fa fa-pencil'></i></a>
-																<a href='delete_user.php?id_user=$val[id_user]' class='btn btn-danger btn-xs' title='Hapus'><i class='lnr lnr-trash'></i></a>
+																<a onclick='return konfirm()' href='delete_user.php?id_user=$val[id_user]' class='btn btn-danger btn-xs' title='Hapus'><i class='lnr lnr-trash'></i></a>
 															</td>
 
 														  </tr>
@@ -143,7 +141,11 @@ if ($_SESSION['level'] == 'Admin') {
 	<script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="../assets/scripts/klorofil-common.js"></script>
-
+	<script src="../assets/datatables/js/dataTables.bootstrap.js"></script>
+	<script src="../assets/datatables/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+		$('#datatables').DataTable();
+	</script>
 </body>
 
 </html>

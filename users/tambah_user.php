@@ -82,7 +82,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		 		<div class="container-fluid">
 					<div class="panel">
 						<div class="panel-heading">
-							<h1 class="panel-title"><i class="lnr lnr-user"></i>&ensp;Tambah Users</h1>
+							<h1 class="panel-title"><i class="lnr lnr-users"></i>&ensp; Tambah Users</h1>
 						</div>
 					</div>
 		 			<div class="row">
@@ -93,7 +93,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		 								<div class="row">
 		 									<div class="col-md-6">
 												<label for="">User Name</label>
-		 										<input type="text" name="user_name" class="form-control" placeholder="User Name" value="<?php echo(isset($_POST['user_name']) ? $_POST['user_name'] : $user_name ) ?>">
+		 										<input required type="text" name="user_name" class="form-control" placeholder="User Name" value="<?php echo(isset($_POST['user_name']) ? $_POST['user_name'] : $user_name ) ?>">
 		 										<span class="text-danger"> <?php echo($user_name_err); ?></span>
 		 									</div>
 
@@ -102,7 +102,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		 								<div class="row">
 											<div class="col-md-6">
 												<label for="">Password</label>
-												<input type="Password" name="password" placeholder="Password" class="form-control" value="<?php echo($password) ?>">
+												<input required type="Password" name="password" placeholder="Password" class="form-control" value="<?php echo($password) ?>">
 												<span class="text-danger"> <?php echo($password_err); ?></span>
 		 									</div>
 		 								</div>
@@ -110,7 +110,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		 								<div class="row">
 		 									<div class="col-md-6">
 												<label for="">Konfirmasi Password</label>
-		 										<input type="password" name="konfirmasi" class="form-control" placeholder="Konfirmasi Password" value="<?php echo(isset($_POST['konfirmasi']) ? $_POST['konfirmasi'] : $konfirmasi ) ?>">
+		 										<input required type="password" name="konfirmasi" class="form-control" placeholder="Konfirmasi Password" value="<?php echo(isset($_POST['konfirmasi']) ? $_POST['konfirmasi'] : $konfirmasi ) ?>">
 		 										<span class="text-danger"> <?php echo($konfirmasi_err); ?></span>
 		 									</div>
 		 								</div>
@@ -119,7 +119,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 											<div class="col-md-6">
 												<label for="">Level</label>
 		 										<select class="form-control" name="level">
-			 										<option value="">Pilih Level</option>
+			 										<option value="">--Pilih Level--</option>
 													<option value="Admin" <?php echo $level == "Admin" ? 'selected' : '' ?> >Admin</option>
 
 													<option value="Guru" <?php echo $level == "Guru" ? 'selected' : '' ?> >Guru</option>
@@ -133,7 +133,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		 								<div class="row">
 		 									<div class="col-md-6">
 		 										<button type="submit" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp; Tambah</button>
-		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i> &nbsp;  Batal</button>
+		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i>&nbsp; Batal</button>
 		 									</div>
 		 								</div>
 		 							</form>

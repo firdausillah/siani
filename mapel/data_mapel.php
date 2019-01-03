@@ -43,7 +43,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 				<div class="container-fluid">
 					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title"><i class="lnr lnr-user"></i>&ensp;Data Mata Pelajaran</h3>
+							<h3 class="panel-title"><i class="fa fa-file-o"></i>&ensp; Data Mata Pelajaran</h3>
 							<div class="col-md-2 col-md-offset-10">
 
 							</div>
@@ -73,7 +73,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 									<table class="table table-striped table-hover table-bordered">
 										<thead>
 											<tr>
-												<th>No</th>
+												<th>No.</th>
 												<th>Kode Mata Pelajaran</th>
 												<th>Mata Pelajaran</th>
 												<th>Action</th>
@@ -82,9 +82,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 										<tbody>
 											<script type="text/javascript">
 												function konfirm() {
-													tanya = confirm("Anda yakin ?");
-													if (tanya == true) return true;
-													else return false;
+													return confirm("Anda yakin ingin menghapus data ?");
 												}
 											</script>
 											<?php
@@ -107,7 +105,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 															<td>$val[mapel]</td>
 															<td>
 																<a href='edit_mapel.php?kd_mapel=$val[kd_mapel]' class='btn btn-primary btn-xs' title='Edit'><i class='fa fa-pencil'></i></a>
-																<a href='delete_mapel.php?kd_mapel=$val[kd_mapel]' class='btn btn-danger btn-xs' title='Hapus'><i class='lnr lnr-trash'></i></a>
+																<a onclick='return konfirm()'  href='delete_mapel.php?kd_mapel=$val[kd_mapel]' class='btn btn-danger btn-xs' title='Hapus'><i class='lnr lnr-trash'></i></a>
 															</td>
 
 														  </tr>
@@ -134,7 +132,11 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 	<script src="../assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="../assets/scripts/klorofil-common.js"></script>
-
+	<script src="../assets/datatables/js/dataTables.bootstrap.js"></script>
+	<script src="../assets/datatables/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+		$('#datatables').DataTable();
+	</script>
 </body>
 
 </html>

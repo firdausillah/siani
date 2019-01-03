@@ -230,7 +230,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 										<br>
 										<div class="row">
 		 									<div class="col-md-6">
-		 										<button type="submit" class="btn btn-primary"><i class="fa fa-plus-square"></i> &nbsp; Tambah</button>
+		 										<button type="submit" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp; Tambah</button>
 		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i> &nbsp; Batal</button>
 		 									</div>
 		 								</div>

@@ -95,7 +95,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		 		<div class="container-fluid">
 					<div class="panel">
 						<div class="panel-heading">
-							<h1 class="panel-title"><i class="lnr lnr-user"></i>&ensp;Tambah Data Kelas</h1>
+							<h1 class="panel-title"><i class="fa fa-building-o"></i>&ensp; Tambah Data Kelas</h1>
 						</div>
 					</div>
 		 			<div class="row">
@@ -106,7 +106,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		 								<div class="row">
 		 									<div class="col-md-6">
 												<label for="">Kode Kelas</label>
-		 										<input type="text" name="kode_kelas" class="form-control" placeholder="kode kelas" value="<?php echo(isset($_POST['kode_kelas']) ? $_POST['kode_kelas'] : $kode_kelas ) ?>">
+		 										<input type="text" name="kode_kelas" class="form-control" placeholder="Kode Kelas" value="<?php echo(isset($_POST['kode_kelas']) ? $_POST['kode_kelas'] : $kode_kelas ) ?>">
 		 										<span class="text-danger"> <?php echo($kode_kelas_err); ?></span>
 		 									</div>
 		 								</div>
@@ -114,22 +114,22 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		 								<div class="row">
 											<div class="col-md-6">
 												<label for="">Kelas</label>
-												<input type="text" name="kelas" class="form-control" placeholder="kelas" value="<?php echo(isset($_POST['kelas']) ? $_POST['kelas'] : $kelas ) ?>">
+												<input type="text" name="kelas" class="form-control" placeholder="Kelas" value="<?php echo(isset($_POST['kelas']) ? $_POST['kelas'] : $kelas ) ?>">
 												<span class="text-danger"> <?php echo($kelas_err); ?></span>
 		 									</div>
 		 								</div>
 		 								<br>
 		 								<div class="row">
 		 									<div class="col-md-6">
-												<label for="">golongan</label>
-		 										<input type="text" name="golongan" class="form-control" placeholder="golongan" value="<?php echo(isset($_POST['kode_kelas']) ? $_POST['golongan'] : $golongan ) ?>">
+												<label for="">Golongan</label>
+		 										<input type="text" name="golongan" class="form-control" placeholder="Golongan" value="<?php echo(isset($_POST['kode_kelas']) ? $_POST['golongan'] : $golongan ) ?>">
 		 										<span class="text-danger"> <?php echo($golongan_err); ?></span>
 		 									</div>
 		 								</div>
 		 								<br>
 										<div class="row">
 										  <div class="col-md-6">
-												<label for="">jurusan</label>
+												<label for="">Jurusan</label>
 										    <select class="form-control" name="jurusan">
 													<option value="">-- Pilih Jurusan --</option>
 													<?php
@@ -145,8 +145,8 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 										<br>
 		 								<div class="row">
 		 									<div class="col-md-6">
-		 										<button type="submit" class="btn btn-primary"><i class="fa fa-plus-square"></i>Tambah</button> &nbsp; &nbsp;
-		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i> &nbsp;  Batal</button>
+		 										<button type="submit" class="btn btn-primary"><i class="fa fa-plus-square"></i>&nbsp; Tambah</button>
+		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i>&nbsp; Batal</button>
 		 									</div>
 		 								</div>
 		 							</form>

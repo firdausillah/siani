@@ -86,7 +86,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 			 <div class="container-fluid">
 				 <div class="panel">
 					 <div class="panel-heading">
-						 <h1 class="panel-title"><i class="lnr lnr-user"></i>&ensp;Edit Users</h1>
+						 <h1 class="panel-title"><i class="lnr lnr-users"></i>&ensp; Edit Users</h1>
 					 </div>
 				 </div>
 				 <div class="row">
@@ -135,8 +135,8 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 									 <br>
 									 <div class="row">
 										 <div class="col-md-6">
-											 <button type="submit" name="button" class="btn btn-primary btn-sm"> <i class="fa fa-check"></i> Simpan </button> &nbsp; &nbsp;
-											 <button type="reset" name="reset" class="btn btn-danger btn-sm" onclick="history.go(-1)"> <i class="fa fa-times-circle"></i> &nbsp; Batal</button>
+											 <button type="submit" name="button" class="btn btn-primary btn-sm"> <i class="fa fa-check"></i>&nbsp; Simpan</button>
+											 <button type="reset" name="reset" class="btn btn-danger btn-sm" onclick="history.go(-1)"> <i class="fa fa-times-circle"></i>&nbsp; Batal</button>
 										 </div>
 									 </div>
 								 </form>

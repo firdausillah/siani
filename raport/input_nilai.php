@@ -90,7 +90,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 				<div class="container-fluid container">
 					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title"><i class="lnr lnr-user"></i>&ensp;Raport</h3>
+							<h3 class="panel-title"><i class="lnr lnr-list"></i>&ensp; Raport</h3>
 							<div class="col-md-2 col-md-offset-10">
 							</div>
 						</div>
@@ -118,8 +118,8 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 									<table class="table table-striped table-hover table-bordered">
 										<thead align="center">
                       <tr>
-                				<td rowspan="2">No</td>
-                				<td rowspan="2" >Nama Siswa</td>
+                				<td rowspan="2">No.</td>
+                				<td rowspan="2">Nama Siswa</td>
                 				<td colspan="<?php echo count($mapel);?>">Nilai</td>
                 				<td colspan="4">Nilai Kompentensi</td>
                 			</tr>

@@ -83,7 +83,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
  			 <div class="container-fluid">
  				 <div class="panel">
  					 <div class="panel-heading">
- 						 <h1 class="panel-title"><i class="fa fa-user"></i>&ensp;Edit Guru</h1>
+ 						 <h1 class="panel-title"><i class="fa fa-building-o"></i>&ensp; Edit Guru</h1>
  					 </div>
  				 </div>
  				 <div class="row">
@@ -97,32 +97,36 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 											<div class="col-md-6">
 												<div class="col-md-6">
 												<label for="">Kode Kelas</label>
-												<input type="text" name="kd_kelas" class="form-control" placeholder="kd_kelas" value="<?php echo($val['kd_kelas']) ?>">
+												<input type="text" name="kd_kelas" class="form-control" placeholder="Kode Kelas" value="<?php echo($val['kd_kelas']) ?>">
 		 										<span class="text-danger"> <?php echo($kd_kelas_err); ?></span>
+												</div>
 											</div>
 										</div>
 										<br>
 										<div class="row">
-										 <div class="col-md-6">
-											 <label for="">kelas</label>
-											 <input type="text" name="kelas" class="form-control" placeholder="kelas" value="<?php echo($val['kelas']) ?>">
-											 <span class="text-danger"> <?php echo($kelas_err); ?></span>
-										 </div>
+										 	<div class="col-md-6">
+										 		<div class="col-md-6">
+												 <label for="">Kelas</label>
+												 <input type="text" name="kelas" class="form-control" placeholder="Kelas" value="<?php echo($val['kelas']) ?>">
+												 <span class="text-danger"> <?php echo($kelas_err); ?></span>
+										 		</div>
+											</div>
 										</div>
 										<br>
-										 <div class="row">
+										<div class="row">
 											<div class="col-md-6">
 												<div class="col-md-6">
-												<label for="">golongan</label>
-												<input type="text" name="golongan" class="form-control" placeholder="golongan" value="<?php echo($val['golongan']) ?>">
+												<label for="">Golongan</label>
+												<input type="text" name="golongan" class="form-control" placeholder="Golongan" value="<?php echo($val['golongan']) ?>">
 		 										<span class="text-danger"> <?php echo($golongan_err); ?></span>
+												</div>
 											</div>
 										</div>
 										<br>
 										<div class="row">
 		 									<div class="col-md-6">
-		 										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>  Simpan</button> &nbsp; &nbsp;
-		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i> &nbsp;  Batal</button>
+		 										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i>&nbsp; Simpan</button>
+		 										<button type="reset" name="reset" class="btn btn-danger" onclick="history.go(-1);"><i class="fa fa-times-circle"></i>&nbsp; Batal</button>
 		 									</div>
 		 								</div>
 									</form>
