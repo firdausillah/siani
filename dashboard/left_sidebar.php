@@ -40,12 +40,15 @@
 														foreach ($query2 as $key2 => $value2) {
 													?>
 													<li>
-														<a class="<?php echo (@$_GET['kelas']==$value2['kd_kelas'])?'active':'' ?>" href="../siswa/data_siswa.php?kelas=<?php echo $value2['kd_kelas'] ?>"><?php echo $value2['kelas']." ".$value2['golongan'] ?></a>
+														<a class="<?php echo (@$_GET['kelas']==$value2['kd_kelas'])?'active':'' ?>" href="../siswa/filter_data_siswa.php?kelas=<?php echo $value2['kd_kelas'] ?>"><?php echo $value2['kelas']." ".$value2['golongan'] ?></a>
 													</li>
 												<?php } ?>
 												</ul>
 											</li>
 										<?php } ?>
+										<li>
+											<a  href="../siswa/data_siswa.php" class="<?php echo ($nav == "guru" ? 'active' : '') ?>">Semua Data Siswa</a>
+										</li>
 								</ul>
 							</div>
 						</li>
@@ -110,12 +113,15 @@
 														foreach ($query2 as $key2 => $value2) {
 													?>
 													<li>
-														<a class="<?php echo (@$_GET['kelas']==$value2['kd_kelas'])?'active':'' ?>" href="../siswa/data_siswa.php?kelas=<?php echo $value2['kd_kelas'] ?>"><?php echo $value2['kelas']." ".$value2['golongan'] ?></a>
+														<a class="<?php echo (@$_GET['kelas']==$value2['kd_kelas'])?'active':'' ?>" href="../siswa/filer_data_siswa.php?kelas=<?php echo $value2['kd_kelas'] ?>"><?php echo $value2['kelas']." ".$value2['golongan'] ?></a>
 													</li>
 												<?php } ?>
 												</ul>
 											</li>
 										<?php } ?>
+										<li>
+											<a  href="../siswa/data_siswa.php" class="<?php echo ($nav == "siswa" ? 'active' : '') ?>">Data Siswa</a>
+										</li>
 								</ul>
 							</div>
 						</li>
