@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 31, 2018 at 02:00 PM
+-- Generation Time: Jan 03, 2019 at 05:22 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -24,29 +24,30 @@ DELIMITER $$
 --
 -- Procedures
 --
-CREATE DEFINER=`root`@`localhost` PROCEDURE `actorCity`(IN ct varchar(30), IN lim int(4))
-BEGIN
-SELECT first_name, last_name, city FROM actor INNER JOIN film_actor ON actor.actor_id = film_actor.actor_id INNER JOIN film on film_actor.film_id = film.film_id INNER JOIN inventori ON film.film_id = inventori.film_id INNER JOIN store ON inventori.store_id = store.store_id INNER JOIN address  ON store.address_id = address.address_id INNER JOIN city ON address.city_id=city.city_id WHERE city = ct LIMIT lim;
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `getActorname`(IN name varchar (45))
-BEGIN
-SELECT first_name, last_name FROM Actor WHERE first_name LIKE CONCAT('%',name,'%') OR last_name LIKE CONCAT('%',name,'%');
-END$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `siswa`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `data_kelas`()
+    NO SQL
 begin
-select*from siswa;
+SELECT * FROM kelas INNER JOIN jurusan ON kelas.id_jurusan=jurusan.id_jurusan;
 end$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `user`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `data_siswa`()
 begin
-select users.id_user, first_name, last_name, user_name, password, kelas, jurusan, level FROM users LEFT JOIN siswa ON users.id_user=siswa.id_user LEFT JOIN kelas ON siswa.kd_kelas=kelas.kd_kelas LEFT JOIN jurusan ON kelas.id_jurusan=jurusan.id_jurusan;  
+SELECT siswa.nis, first_name, last_name, tgl_lahir, alamat, no_hp, wali_murid, hp_wali, kelas, jurusan, golongan FROM siswa LEFT JOIN kelas ON siswa.kd_kelas=kelas.kd_kelas LEFT JOIN jurusan ON kelas.id_jurusan=jurusan.id_jurusan;
 end$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `users`()
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_data_siswa`(IN nis int (10))
 begin
-SELECT users.id_user, first_name, last_name, user_name, password, kelas, jurusan, level FROM users LEFT JOIN siswa ON users.id_user=siswa.id_user LEFT JOIN hasil_nilai ON siswa.nis=hasil_nilai.nis LEFT JOIN section ON hasil_nilai.id_section=section.id_section LEFT JOIN kelas ON section.kd_kelas=kelas.kd_kelas LEFT JOIN jurusan ON kelas.id_jurusan=jurusan.id_jurusan;
+DELETE FROM siswa WHERE siswa.nis=(nis);
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_guru`(IN `id_guru` INT(10))
+begin
+DELETE FROM guru WHERE guru.id_guru=(id_guru);
+end$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `filter_data_siswa`(IN `kode_kelas` VARCHAR(9))
+begin
+SELECT siswa.nis, first_name, last_name, tgl_lahir, alamat, no_hp, wali_murid, hp_wali, kelas, jurusan, golongan FROM siswa LEFT JOIN kelas ON siswa.kd_kelas=kelas.kd_kelas LEFT JOIN jurusan ON kelas.id_jurusan=jurusan.id_jurusan where siswa.kd_kelas=(kode_kelas);
 end$$
 
 DELIMITER ;
@@ -69,8 +70,8 @@ CREATE TABLE IF NOT EXISTS `guru` (
 --
 
 INSERT INTO `guru` (`id_guru`, `nama_guru`, `no_hp`, `email`) VALUES
-(1234, 'Amir', '0987658745678', 'amir@gmail.com'),
-(1111222, 'edwinromdoni', '08888899999', 'firdausillah123@gmail.com');
+(444444, 'lourna fitaloka', '0987654345678', 'lourna@gmail.com'),
+(555555, 'ibrahim', '0987658745949', 'ibrahim@gmail.com');
 
 --
 -- Triggers `guru`
@@ -116,19 +117,7 @@ CREATE TABLE IF NOT EXISTS `hasil_nilai` (
   `sosial` text NOT NULL,
   `pengetahuan` text NOT NULL,
   `keterampilan` text NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `hasil_nilai`
---
-
-INSERT INTO `hasil_nilai` (`id_hasilnilai`, `nis`, `nilai`, `kd_mapel`, `id_guru`, `id_thn_akad`, `spiritual`, `sosial`, `pengetahuan`, `keterampilan`) VALUES
-(1, 111222, 80, 'MP1', 1234, 1, '', '', '', ''),
-(2, 111222, 87, 'MP2', 1111222, 1, '', '', '', ''),
-(3, 111222, 80, 'MP1', 1234, 1, '', '', '', ''),
-(4, 111222, 87, 'MP2', 1111222, 1, '', '', '', ''),
-(5, 111222, 80, 'MP1', 1234, 4, 'hkhkjhkjhkjhkj', 'hkjhkjhkjhjkh', 'kjhkjhkjhkjhkjhkj', 'hkjhkjhkjhkjh'),
-(6, 111222, 80, 'MP1', 1234, 4, 'hkhkjhkjhkjhkj', 'hkjhkjhkjhjkh', 'kjhkjhkjhkjhkjhkj', 'hkjhkjhkjhkjh');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -168,14 +157,9 @@ CREATE TABLE IF NOT EXISTS `kelas` (
 --
 
 INSERT INTO `kelas` (`kd_kelas`, `kelas`, `golongan`, `id_jurusan`) VALUES
-('X1', 'X', '1', 1),
-('X2', 'X', '2', 1),
+('XA1', 'X', '1', 1),
 ('XA3', 'X', '3', 2),
-('XA4', 'X', '4', 1),
-('XA44', 'XII', '4', 3),
-('XI1', 'XI', '1', 3),
-('XI2', 'XI', '2', 2),
-('XIA3', 'XI', '3', 1);
+('XAG3', 'X', '3', 3);
 
 -- --------------------------------------------------------
 
@@ -194,7 +178,8 @@ CREATE TABLE IF NOT EXISTS `mapel` (
 
 INSERT INTO `mapel` (`kd_mapel`, `mapel`) VALUES
 ('MP1', 'MATEMATIKA'),
-('MP2', 'BAHASA INDONESIA');
+('MP2', 'BAHASA INDONESIA'),
+('MP3', 'Biologi');
 
 -- --------------------------------------------------------
 
@@ -234,7 +219,35 @@ CREATE TABLE IF NOT EXISTS `siswa` (
 --
 
 INSERT INTO `siswa` (`nis`, `first_name`, `last_name`, `tgl_lahir`, `alamat`, `no_hp`, `wali_murid`, `hp_wali`, `kd_kelas`) VALUES
-(111222, 'firdaus', 'illah', '0000-00-00', '', '', '', '', 'X1');
+(111111, 'edwin', 'ramdani', '2017-12-31', 'sumbersari', '0987654345678', 'sumarni', '098654678909', 'XA1'),
+(222222, 'fellia', 'nurohmah', '2016-07-29', 'tulungagung', '0987654345678', 'sumanto', '098654678909', 'XA3');
+
+--
+-- Triggers `siswa`
+--
+DELIMITER //
+CREATE TRIGGER `create_user_siswa` AFTER INSERT ON `siswa`
+ FOR EACH ROW begin
+insert into users (id_user, user_name, password, level, status) values (NULL, new.nis, new.nis, 'Siswa', 'Aktif');
+end
+//
+DELIMITER ;
+DELIMITER //
+CREATE TRIGGER `delete_user_siswa` AFTER DELETE ON `siswa`
+ FOR EACH ROW begin 
+delete from users where user_name = old.nis;
+end
+//
+DELIMITER ;
+DELIMITER //
+CREATE TRIGGER `update_user_siswa` AFTER UPDATE ON `siswa`
+ FOR EACH ROW begin
+if old.nis<>new.nis then
+update users set user_name=new.nis, password=new.nis where user_name=old.nis;
+end if;
+end
+//
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -271,7 +284,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(20) NOT NULL,
   `level` enum('Admin','Guru','Siswa') NOT NULL,
   `status` enum('Aktif','Nonaktif') NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
@@ -279,11 +292,16 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id_user`, `user_name`, `password`, `level`, `status`) VALUES
 (19, 'admin', 'admin', 'Admin', 'Aktif'),
-(21, 'fellia', '01', 'Guru', 'Aktif'),
-(22, '1111222', '1111222', 'Guru', 'Aktif'),
-(26, '1234', '1234', 'Guru', 'Aktif'),
-(27, 'a', 'a', 'Guru', 'Aktif'),
-(28, 'b', 'b', 'Siswa', 'Aktif');
+(29, '111111', '111111', 'Siswa', 'Aktif'),
+(32, '444444', '444444', 'Guru', 'Aktif'),
+(33, '555555', '555555', 'Guru', 'Aktif'),
+(35, '2', '2', 'Admin', 'Aktif'),
+(36, '2', '2', 'Admin', 'Aktif'),
+(37, '222222', '222222', 'Siswa', 'Aktif'),
+(38, '111111', '111111', 'Siswa', 'Aktif'),
+(39, '222222', '222222', 'Siswa', 'Aktif'),
+(40, '111111', '111111', 'Siswa', 'Aktif'),
+(41, '222222', '222222', 'Siswa', 'Aktif');
 
 --
 -- Indexes for dumped tables
@@ -351,7 +369,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `hasil_nilai`
 --
 ALTER TABLE `hasil_nilai`
-MODIFY `id_hasilnilai` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id_hasilnilai` int(10) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `nilai_kompetensi`
 --
@@ -361,7 +379,7 @@ MODIFY `kd_kompetensi` int(10) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=29;
+MODIFY `id_user` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=43;
 --
 -- Constraints for dumped tables
 --
