@@ -122,7 +122,7 @@ CREATE TABLE `siswa` (
   CONSTRAINT `siswa_ibfk_2` FOREIGN KEY (`kd_kelas`) REFERENCES `kelas` (`kd_kelas`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO siswa VALUES("111111","edwin","ramdani","2017-12-31","sumbersari","0987654345678","sumarni","098654678909","XA1");
+INSERT INTO siswa VALUES("111111","edwin","ram","2017-12-31","sumbersari","0987654345678","sumarni","098654678909","XA1");
 INSERT INTO siswa VALUES("222222","fellia","nurohmah","2016-07-29","tulungagung","0987654345678","sumanto","098654678909","XA3");
 
 
@@ -153,7 +153,7 @@ CREATE TABLE `users` (
   `level` enum('Admin','Guru','Siswa') NOT NULL,
   `status` enum('Aktif','Nonaktif') NOT NULL,
   PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=42 DEFAULT CHARSET=latin1;
 
 INSERT INTO users VALUES("19","admin","admin","Admin","Aktif");
 INSERT INTO users VALUES("29","111111","111111","Siswa","Aktif");

@@ -6,6 +6,7 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 		window.location.href='../login.php';
 	</script>";
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -125,7 +126,8 @@ if (empty($_SESSION['user_name']) && empty($_SESSION['level'])) {
 											<div class="input-group">
 												<span class="input-group-addon">Pindahkan Ke-</span>
 												<select class="form-control" name="kelas" required>
-													<?php $q = mysqli_query($con,"SELECT * FROM kelas k LEFT JOIN jurusan j ON(k.id_jurusan=j.id_jurusan)");
+													<?php $q = mysqli_query($con,"SELECT k.*,j.jurusan FROM kelas k LEFT JOIN jurusan j ON(k.id_jurusan=j.id_jurusan)");
+													echo mysqli_error($con); exit();
 													foreach ($q as $key => $value) {
 														echo "<option value='$value[kd_kelas]'>$value[kelas] $value[jurusan] $value[golongan]</option>";
 													 } ?>

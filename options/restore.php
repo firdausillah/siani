@@ -9,7 +9,7 @@ foreach($sql as $query){
   if($result){
     echo "<script>
             alert('Data Berhasil Direstore');
-            window.location.href='dashboard/dashboard.php';
+            window.location.href='../dashboard/dashboard.php';
           </script>";
 
   }
